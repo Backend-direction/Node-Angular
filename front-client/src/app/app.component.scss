@@ -1,0 +1,16 @@
+.app_navigation {
+  height: 50px;
+  background-color: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  ul {
+    list-style-type: none;
+
+    li a {
+      text-decoration: none;
+      font: bold 16px Georgia, serif;
+    }
+  }
+}
