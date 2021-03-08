@@ -15,14 +15,17 @@ export class TodoService {
     return this.todos;
   }
 
-  add(todo: { name: string, isDone: boolean }) {
+  add(name: string) {
     const id = Math.max(...this.todos.map(item => item.id)) + 1;
     const newTodo = {
       id,
-      ...todo,
+      isDone: false,
+      name,
     };
 
     this.todos.push(newTodo);
+
+    return this.todos;
   }
 
   remove(todoId: number) {

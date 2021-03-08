@@ -11,11 +11,13 @@ export class AppTodoList implements OnInit {
 
   toDoItems: Todo[] = [];
   
-  constructor(
-    public TodoService: TodoService,
-    ) {}
+  constructor(public TodoService: TodoService) {}
 
   ngOnInit(): void {
     this.toDoItems = this.TodoService.getAllItems();
+  }
+
+  addTodo(name: string) {
+    this.toDoItems = this.TodoService.add(name);
   }
 }
