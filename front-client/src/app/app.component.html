@@ -1,12 +1,29 @@
-<div>
+<div class="main__container">
   <nav class="app_navigation">
-    <ul>
+    <ul сlass="app_navigation__list">
       <li>
-        <a routerLink="/todo-list" routerLinkActive="active">
+        <a routerLink="/todo-list" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:
+          true}">
           Todo list
+        </a> 
+      </li>
+      <li>
+        <a routerLink="/want-watch" routerLinkActive="is-active">
+          Want watch
         </a>
-        </li>
+      </li>
+      <li>
+        <a routerLink="/want-buy" routerLinkActive="is-active">
+          Want buy
+        </a>
+      </li>
     </ul>
   </nav>
+  <div 
+    *ngIf="shouldShow()"
+    class="main__text"
+  >
+    Manage your time properly
+  </div>
   <router-outlet></router-outlet>
 </div>

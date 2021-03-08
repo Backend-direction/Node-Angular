@@ -4,6 +4,8 @@ import { AppTodoList } from './list/app-todo-list.component';
 
 const routes: Routes = [
   { path: 'todo-list', component:  AppTodoList },
+  { path: 'want-watch', component:  AppTodoList },
+  { path: 'want-buy', component:  AppTodoList },
 ];
 
 @NgModule({

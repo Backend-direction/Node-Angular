@@ -1,3 +1,17 @@
+.main {
+  &__container {
+    font-family: 'Akaya Telivigala', cursive;
+  }
+
+  &__text {
+    font-size: 50px;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .app_navigation {
   height: 50px;
   background-color: lightblue;
@@ -7,10 +21,13 @@
 
   ul {
     list-style-type: none;
+    display: flex;
+    
 
     li a {
       text-decoration: none;
       font: bold 16px Georgia, serif;
+      padding: 0 10px;
     }
   }
 }
