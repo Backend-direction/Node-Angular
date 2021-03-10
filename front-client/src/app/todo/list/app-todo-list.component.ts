@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo } from '../../interfaces/todo';
 import { TodoService } from '../../services/todo.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-todo-list',
@@ -10,6 +11,8 @@ import { TodoService } from '../../services/todo.service';
 export class AppTodoList implements OnInit {
 
   toDoItems: Todo[] = [];
+  todoTitle: string;
+  isFormVisible: boolean;
   
   constructor(public TodoService: TodoService) {}
 
@@ -17,7 +20,13 @@ export class AppTodoList implements OnInit {
     this.toDoItems = this.TodoService.getAllItems();
   }
 
-  addTodo(name: string) {
-    this.toDoItems = this.TodoService.add(name);
+  showAddForm() {
+    this.isFormVisible = true;
+  }
+
+  addTodo(form: NgForm) {
+    this.toDoItems = this.TodoService.add(form.value.name);
+    form.reset();
+    this.isFormVisible = false;
   }
 }

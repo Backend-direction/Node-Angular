@@ -1,9 +1,12 @@
 <div class="todo__container">
-  <div
-    (click)="openTodoDatail()"
-  >
+  <div>
     <input type="checkbox">
-    <span class="todo__item_name">{{ todo.name }}</span>
+    <span 
+      class="todo__item_name"
+      (click)="openTodoDatail()"
+    >
+      {{ todo.name }}
+    </span>
   </div>
   <div class="todo__item_action__wrapper">
     <div 

@@ -10,27 +10,32 @@
     </li>
   </ul>
   <button
+  *ngIf="!isFormVisible"
+  (click)="showAddForm()"
    class="todo__list__btn--add"
   >
     Add todo
   </button>
   <form
-    action="#"
+    *ngIf="isFormVisible"
+    #f="ngForm"
     class="todo_add__form"
+    (ngSubmit)="addTodo(f)"
   >
   <div class="todo_add__form__control">
     <label for="name">Todo title:</label>
     <input 
-      #todo
+      ngModel
+      #title="ngModel"
       class="todo_add__form__control--name"
+      autofocus
       type="text" 
       name="name"
       id="name"
     />
     <button 
-      type="button"
+      type="submit"
       class=todo_add__form__btn--add
-      (click)=addTodo(todo.value)
     >
       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
         <path fill="currentColor" d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" />

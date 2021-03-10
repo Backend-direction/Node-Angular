@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Todo } from '../interfaces/todo';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class TodoService {
   todos: Todo[] = [
     { id: 1, name: 'Learn Angular', isDone: false},
@@ -13,6 +11,10 @@ export class TodoService {
 
   getAllItems(): Todo[] {
     return this.todos;
+  }
+
+  getItemById(id:number): Todo | undefined {
+    return this.todos.find(todo => todo.id === id)
   }
 
   add(name: string) {
