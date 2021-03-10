@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppTodoList } from './list/app-todo-list.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: 'todo-list', component:  AppTodoList },
-  { path: 'want-watch', component:  AppTodoList },
-  { path: 'want-buy', component:  AppTodoList },
+  { path: '', component:  DashboardComponent },
+  { path: 'want-watch', component:  DashboardComponent },
+  { path: 'want-buy', component:  DashboardComponent },
 ];
 
 @NgModule({

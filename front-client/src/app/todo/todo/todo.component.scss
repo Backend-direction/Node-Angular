@@ -1,0 +1,31 @@
+.todo{
+  &__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+  
+    &_name {
+      padding-left: 10px;
+    }
+  
+    &_action__wrapper {
+      display: flex;
+    }
+  
+    &_action {
+      padding: 5px;
+      cursor: pointer;
+    }
+  
+    &_action svg:hover {
+      border-radius: 50%;
+      background-color: rgb(144, 193, 209);
+    }
+  }
+}
