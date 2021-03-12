@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import {MatDialog} from '@angular/material/dialog';
+import { DialogComponent } from './common/dialog/dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +11,18 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'front-client';
 
-  constructor( private router: Router) {
+  constructor( public dialog: MatDialog, private router: Router) {
 
   }
 
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
   shouldShow() {
     return this.router.url === '/';
   }
