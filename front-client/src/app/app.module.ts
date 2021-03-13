@@ -12,12 +12,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogComponent } from './common/dialog/dialog.component';
 
 import {MatDialogModule} from '@angular/material/dialog';
+import { PageNotFoundComponent } from './common/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     DialogComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
