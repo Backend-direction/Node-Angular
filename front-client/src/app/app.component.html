@@ -1,34 +1,3 @@
 <div class="main__container">
-  <nav class="app_navigation">
-    <ul сlass="app_navigation__list">
-      <li>
-        <a routerLink="/todo-list" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">
-          Todo list
-        </a> 
-      </li>
-      <li>
-        <a routerLink="/want-watch" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">
-          Want watch
-        </a>
-      </li>
-      <li>
-        <a routerLink="/want-buy" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">
-          Want buy
-        </a>
-      </li>
-    </ul>
-    <div>
-      <button>
-        <a routerLink="/login">Login</a>
-      </button>
-      <button>
-        <a routerLink="/sign-up">Sign up</a>
-      </button>
-      <button>
-        <a routerLink="/sign-up">Logout</a>
-      </button>
-    </div>
-  </nav>
-  <button mat-button (click)="openDialog()">Open dialog</button>
   <router-outlet></router-outlet>
 </div>

@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { TodoModule } from './todo/todo.module';
 import { AuthModule } from './auth/auth.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -25,7 +26,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     FormsModule,
     AuthModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    DashboardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

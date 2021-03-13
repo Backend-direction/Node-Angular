@@ -17,7 +17,6 @@ import { TodoDetailsComponent } from './todo-details/todo-details.component';
   ],
   imports: [
     BrowserModule,
-    TodoRoutingModule,
     FormsModule,
   ],
   providers: [TodoService],
