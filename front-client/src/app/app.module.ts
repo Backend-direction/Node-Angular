@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
-import { TodoModule } from './todo/todo.module';
 import { AuthModule } from './auth/auth.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 
@@ -24,12 +23,11 @@ import { PageNotFoundComponent } from './common/page-not-found/page-not-found.co
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TodoModule,
+    DashboardModule,
     FormsModule,
     AuthModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    DashboardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,13 +4,9 @@ import { TodoDetailsComponent } from './todo-details/todo-details.component';
 import { AppTodoList } from './list/app-todo-list.component';
 
 const routes: Routes = [
-  { path: 'todo-list', component:  AppTodoList,
-    children: [
-      {
-        path: 'todo/:id',
-        component: TodoDetailsComponent,
-      }
-    ]
+  { 
+    path: 'todo/:id',
+    component: TodoDetailsComponent,
   }
 ];
 

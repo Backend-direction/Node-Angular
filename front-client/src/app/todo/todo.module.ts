@@ -18,6 +18,7 @@ import { TodoDetailsComponent } from './todo-details/todo-details.component';
   imports: [
     BrowserModule,
     FormsModule,
+    TodoRoutingModule,
   ],
   providers: [TodoService],
   bootstrap: []
