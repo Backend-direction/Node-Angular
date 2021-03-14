@@ -12,6 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogComponent } from './common/dialog/dialog.component';
 import { PageNotFoundComponent } from './common/page-not-found/page-not-found.component';
 
+import ActivateGuard from './services/guards/activate-guard';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,14 +23,14 @@ import { PageNotFoundComponent } from './common/page-not-found/page-not-found.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     DashboardModule,
+    AppRoutingModule,
     FormsModule,
     AuthModule,
     BrowserAnimationsModule,
     MaterialModule,
   ],
-  providers: [],
+  providers: [ActivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

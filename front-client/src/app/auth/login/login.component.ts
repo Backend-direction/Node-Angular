@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Validators } from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import { DialogComponent } from '../../common/dialog/dialog.component'; 
@@ -11,7 +12,11 @@ import { DialogComponent } from '../../common/dialog/dialog.component';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(
+    public dialog: MatDialog,
+    private router: Router,
+    private route: ActivatedRoute,
+    ) { }
 
   ngOnInit(): void {
   }
@@ -31,6 +36,11 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     console.warn(this.loginForm.value);
+    const name = this.loginForm.value.login;
+    const password = this.loginForm.value.password;
+    if (name === 'vova' && password === '123') {
+      this.router.navigate(['dashboard']);
+    }
   }
 
 }
