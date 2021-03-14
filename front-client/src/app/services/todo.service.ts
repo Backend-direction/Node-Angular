@@ -30,8 +30,10 @@ export class TodoService {
     return this.todos;
   }
 
-  remove(todoId: number) {
-   this.todos = this.todos.filter(({ id }) => id !== todoId);
+  remove(todo: Todo) {
+   this.todos = this.todos.filter(({ id }) => id !== todo.id);
+
+   return todo;
   }
 
   update(item: Todo) {
