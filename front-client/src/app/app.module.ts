@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { AuthModule } from './auth/auth.module';
@@ -23,11 +24,12 @@ import ActivateGuard from './services/guards/activate-guard';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
     DashboardModule,
     AppRoutingModule,
     FormsModule,
     AuthModule,
-    BrowserAnimationsModule,
     MaterialModule,
   ],
   providers: [ActivateGuard],

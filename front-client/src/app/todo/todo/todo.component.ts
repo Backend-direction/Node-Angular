@@ -41,7 +41,7 @@ export class TodoComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.todoService.remove(this.todo)
+        this.todoService.remove(this.todo).subscribe();
       }
     });
   }

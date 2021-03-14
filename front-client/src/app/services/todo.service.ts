@@ -1,5 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Todo } from '../interfaces/todo';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    Authorization: 'my-auth-token'
+  })
+};
 
 @Injectable()
 export class TodoService {
@@ -8,6 +18,8 @@ export class TodoService {
     { id: 2, name: 'Update cars list', isDone: false},
     { id: 3, name: 'Learn SOLID', isDone: false},
   ];
+
+  constructor(private http: HttpClient) {}
 
   getAllItems(): Todo[] {
     return this.todos;
@@ -30,10 +42,10 @@ export class TodoService {
     return this.todos;
   }
 
-  remove(todo: Todo) {
-   this.todos = this.todos.filter(({ id }) => id !== todo.id);
+  remove(todo: Todo): Observable<{}> {
+    console.log(todo)
+    return this.http.delete(`http://localhost:3000/api/todo/${todo.id}`);
 
-   return todo;
   }
 
   update(item: Todo) {
